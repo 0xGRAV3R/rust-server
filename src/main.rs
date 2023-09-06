@@ -1,9 +1,10 @@
 use std::net::TcpListener;
 use std::net::TcpStream;
-use std::io::{prelude::*, BufReader};
+use std::io::{prelude::*};
 use std::fs;
 use std::thread;
 use std::time::Duration;
+use server::ThreadPool;
 
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
