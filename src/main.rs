@@ -26,6 +26,8 @@ fn handle_connection(mut stream: TcpStream) {
         if buffer.starts_with( get) {
             ("HTTP/1.1 404 NOT FOUND", "index.html")
 
+        } else if (buffer.starts_with(sleep)) {
+
         } else {
             ("HTTP/1.1 404 NOT FOUND", "404.html")
   
