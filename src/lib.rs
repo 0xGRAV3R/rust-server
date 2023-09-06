@@ -18,7 +18,9 @@ impl ThreadPool {
     pub fn new(size: usize) -> ThreadPool {
         assert!(size > 0);
 
-        let (sender, receiver) = mpsc::channel
+        let (sender, receiver) = mpsc::channel();
+
+        let receiver = Arc::new(Mutex::new(receiver))
 
         let mut workers = Vec::with_capacity(size);
 
@@ -46,7 +48,9 @@ struct Worker {
 
 impl Worker {
     fn new(id: usize, receiver: mpsc::Receiver) -> Worker {
-        let thread = thread::spawn(|| {});
+        let thread = thread::spawn(|| {
+            receiver;
+        });
 
         Worker {id, thread}
 
