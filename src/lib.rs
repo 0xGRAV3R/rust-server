@@ -1,5 +1,7 @@
+use std::thread;
+
 pub struct ThreadPool {
-    threads: Vec<thread::JoinHandle<()>>,
+    workers: Vec<Worker>,
 }
 
 impl ThreadPool {
@@ -39,6 +41,6 @@ struct Worker {
 impl Worker {
     fn new(id: usize) -> Worker {
         let thread = thread::spawn(|| {});
-        
+
     }
 }
