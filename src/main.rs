@@ -1,6 +1,6 @@
 use std::net::TcpListener;
 use std::net::TcpStream;
-use std::io::prelude::*;
+use std::io::{prelude::*, BufReader};
 use std::fs;
 use std::thread;
 use std::time::Duration;
