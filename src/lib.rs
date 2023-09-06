@@ -26,7 +26,9 @@ impl ThreadPool {
 
         for id in 0..size {
             // create threads
-            workers.push(Worker::new(id, receiver));
+            workers.push(Worker::new(id, 
+                Arc::clone(&receiver)
+            ));
         }
 
         ThreadPool { workers, sender }
