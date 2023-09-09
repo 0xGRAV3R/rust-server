@@ -7,6 +7,11 @@ pub struct ThreadPool {
 
 type Job = Box<dyn FnOnce() + Send + 'static>;
 
+enum Message {
+    NewJob(Job),
+    Terminate,
+}
+
 impl ThreadPool {
     /// Create a new ThreadPool.
     /// 
