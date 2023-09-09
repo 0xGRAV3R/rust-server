@@ -75,7 +75,7 @@ impl Worker {
             job();
         });
 
-        Worker {id, thread}
+        Worker {id, thread: Some(thread) }
 
     }
 }
