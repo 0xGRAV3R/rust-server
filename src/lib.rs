@@ -97,9 +97,7 @@ impl Worker {
             }
 
             
-            println!("Worker {} got a job; executing.", id);
 
-            job();
         });
 
         Worker {id, thread: Some(thread) }
