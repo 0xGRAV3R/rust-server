@@ -100,7 +100,7 @@ impl Worker {
 
         });
 
-        Worker {id, thread: Some(thread) }
+        
         
         
     }
